@@ -6,7 +6,8 @@ class Header extends Component {
     return (
       <div className="Header">
         <h1 className="headertitle">Seattle Shelter Cats</h1>
-        I am the header.
+        <a href="/signup">Sign Up/Log In</a>
+        <a href="/favorites">My Favorites</a>
       </div>
     );
   }
