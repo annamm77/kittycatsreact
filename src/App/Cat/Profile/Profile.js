@@ -5,7 +5,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        <img src={this.props.pic} alt="current cat" />
+        {this.props.image}
         <p>{this.props.name}</p>
       </div>
     );

@@ -42,7 +42,8 @@ var Cat = React.createClass ({
       <div className="Cat">
         <Profile
           name={this.state.searchResults[this.state.currentCat]["name"]}
-          pic={this.state.searchResults[this.state.currentCat]["image"]}/>
+          image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
+          />
         <Options
           onNextClick={this.handleNextCat} />
       </div>

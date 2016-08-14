@@ -6,8 +6,6 @@ class Options extends Component {
     return (
       <div className="Options">
         <button onClick={this.props.onNextClick}>Next</button>
-        <button>More Info</button>
-        <button>Favorite</button>
       </div>
     );
   }
