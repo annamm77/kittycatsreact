@@ -7,7 +7,7 @@ var Cat = React.createClass ({
   getInitialState: function() {
     return {
       currentCat: 0,
-      searchResults: []
+      searchResults: "boop"
     };
   },
 
@@ -45,6 +45,7 @@ var Cat = React.createClass ({
         <Profile />
         <Options onNextClick={this.handleNextCat} />
         Current Cat = {this.state.currentCat}
+        Search Results = {this.state.searchResults}
       </div>
     );
   }
