@@ -8,8 +8,28 @@ var Cat = React.createClass ({
   getInitialState: function() {
     return {
       currentCat: 0,
-      searchResults: "boop"
+      searchResults: "cats go here"
     };
+  },
+
+  componentDidMount(){
+   this.getCats();
+  },
+
+  getCats: function(){
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:1337/cats",
+      success: function(response){
+        this.updateState(response);
+      }.bind(this)
+    });
+  },
+
+  updateState: function(response){
+    this.setState({
+        searchResults: response
+    })
   },
 
   handleNextCat: function() {
@@ -17,36 +37,14 @@ var Cat = React.createClass ({
     this.setState({currentCat: nextCat});
   },
 
-  getCats: function(){
-      $.ajax({
-          type: "GET",
-          url: "http://localhost:1337/cats",
-          success: function(response){
-            console.log("I worked")
-              this.showResults(response);
-          }.bind(this)
-      });
-  },
-
-  showResults: function(response){
-    console.log(response)
-    this.setState({
-        searchResults: response
-    })
-  },
-
-  componentWillMount(){
-   this.getCats();
-  },
-
   render() {
     return (
       <div className="Cat">
-        <h1>I am the cat container.</h1>
-        <Profile />
-        <Options onNextClick={this.handleNextCat} />
-        Current Cat = {this.state.currentCat}
-        Test = {this.state.searchResults[0]["name"]}
+        <Profile
+          name={this.state.searchResults[this.state.currentCat]["name"]}
+          pic={this.state.searchResults[this.state.currentCat]["image"]}/>
+        <Options
+          onNextClick={this.handleNextCat} />
       </div>
     );
   }

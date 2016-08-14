@@ -5,8 +5,8 @@ class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        <img src="https://placekitten.com/g/500/300" alt="cat" />
-        <p>Cat Name</p>
+        <img src={this.props.pic} alt="current cat" />
+        <p>{this.props.name}</p>
       </div>
     );
   }
