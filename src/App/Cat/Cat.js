@@ -57,6 +57,8 @@ var Cat = React.createClass ({
 
     return <div className="cat">
       <Details currentCat={this.state.searchResults[this.state.currentCat]} onDetailsClick={this.handleDetails}/>
+      <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} />
+
     </div>
   }
 })

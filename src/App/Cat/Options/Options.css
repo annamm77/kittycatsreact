@@ -1,1 +1,6 @@
-
+.options {
+  background-color: gold;
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-.profileimgwrapper {
+.profilewrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   height: 25rem;
 }
 
-.profileimgwrapper img {
+.profilewrapper img {
   flex-shrink: 0;
   min-height: 100%
 }
