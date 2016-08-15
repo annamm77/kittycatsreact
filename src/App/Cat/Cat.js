@@ -39,28 +39,25 @@ var Cat = React.createClass ({
     this.setState({currentCat: nextCat});
   },
 
-  seeDetails: function () {
+  handleDetails: function () {
     this.setState({showDetails: true})
   },
 
   render() {
-    // return (
-      if (!this.state.showDetails){
-        return <div className="cat">
-          <Profile
-            name={this.state.searchResults[this.state.currentCat]["name"]}
-            image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
-          />
-          <Options onNextClick={this.handleNextCat} />
+    if (!this.state.showDetails){
+      return <div className="cat">
+        <Profile
+          name={this.state.searchResults[this.state.currentCat]["name"]}
+          image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
+        />
+        <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} />
+      </div>
+    }
 
-          <button onClick={this.seeDetails}>hi</button>
-        </div>
-      }
-      // loaded, you can use this.state.data here
-        return <div className="cat">
-          <Details currentCat={this.state.searchResults[this.state.currentCat]}/>
-        </div>
-      }
+    return <div className="cat">
+      <Details currentCat={this.state.searchResults[this.state.currentCat]}/>
+    </div>
+  }
 })
 
 export default Cat;
