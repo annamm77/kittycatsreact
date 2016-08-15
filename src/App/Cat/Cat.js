@@ -9,22 +9,14 @@ var Cat = React.createClass ({
   getInitialState: function() {
     return {
       currentCat: 0,
-      searchResults: "cats go here",
-      details: <Details />,
-      profile: "boop",
-      options: <Options onNextClick={this.handleNextCat} />
+      searchResults: "loading",
+      showDetails: false
     };
   },
 
   componentDidMount(){
    this.getCats();
   },
-
-//make this after getCats is done
-  // <Profile
-  //   name={this.state.searchResults[this.state.currentCat]["name"]}
-  //   image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
-  // />,
 
   getCats: function(){
     $.ajax({
@@ -47,13 +39,27 @@ var Cat = React.createClass ({
     this.setState({currentCat: nextCat});
   },
 
+  seeDetails: function () {
+    this.setState({showDetails: true})
+  },
+
   render() {
-    return (
-      <div className="Cat">
-        {this.state.details}
-      </div>
-    );
-  }
+    // return (
+      if (!this.state.showDetails){
+        return <div>Im the profile<button onClick={this.seeDetails}>hi</button></div>
+      }
+      // loaded, you can use this.state.data here
+        return <div>Im the details</div>
+      }
+
+    //   <div className="Cat">
+    //     <Profile
+    //       name={this.state.searchResults[this.state.currentCat]["name"]}
+    //       image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
+    //     />
+    //     <Options onNextClick={this.handleNextCat} />
+    //   </div>
+    // );
 })
 
 export default Cat;
