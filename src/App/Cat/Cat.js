@@ -40,7 +40,11 @@ var Cat = React.createClass ({
   },
 
   handleDetails: function () {
-    this.setState({showDetails: true})
+    if (this.state.showDetails === false) {
+      this.setState({showDetails: true})
+    } else {
+      this.setState({showDetails: false})
+    }
   },
 
   render() {
@@ -55,7 +59,7 @@ var Cat = React.createClass ({
     }
 
     return <div className="cat">
-      <Details currentCat={this.state.searchResults[this.state.currentCat]}/>
+      <Details currentCat={this.state.searchResults[this.state.currentCat]} onDetailsClick={this.handleDetails}/>
     </div>
   }
 })

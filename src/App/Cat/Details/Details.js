@@ -19,6 +19,7 @@ class Details extends Component {
         {this.props.currentCat["zip"]}
         {this.props.currentCat["phone"]}
         {this.props.currentCat["email"]}
+        <button onClick={this.props.onDetailsClick}>Close Details</button>
       </div>
     );
   }
