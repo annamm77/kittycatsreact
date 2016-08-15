@@ -10,3 +10,9 @@
   flex-shrink: 0;
   min-height: 100%
 }
+
+.catname {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  margin-top: 0rem;
+}

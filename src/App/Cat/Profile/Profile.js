@@ -8,7 +8,7 @@ class Profile extends Component {
         <div className="profilewrapper">
           <img src={this.props.currentCat["image"]} alt="current cat" className="profileimg" />
         </div>
-        <p>{this.props.currentCat["name"]}</p>
+        <p className="catname">{this.props.currentCat["name"]}</p>
       </div>
     );
   }
