@@ -2,6 +2,7 @@ import React from 'react';
 import './Cat.css';
 import Profile from './Profile/Profile'
 import Options from './Options/Options'
+import Details from './Details/Details'
 import $ from 'jquery';
 
 var Cat = React.createClass ({
