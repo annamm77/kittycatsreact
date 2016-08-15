@@ -51,13 +51,13 @@ var Cat = React.createClass ({
     if (!this.state.showDetails){
       return <div className="cat">
         <Profile currentCat={this.state.searchResults[this.state.currentCat]}/>
-        <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} />
+        <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Profile View" />
       </div>
     }
 
     return <div className="cat">
       <Details currentCat={this.state.searchResults[this.state.currentCat]} onDetailsClick={this.handleDetails}/>
-      <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} />
+      <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Picture View" />
     </div>
   }
 })

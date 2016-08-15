@@ -5,8 +5,8 @@ class Options extends Component {
   render() {
     return (
       <div className="options">
-        <button onClick={this.props.onNextClick}>Next</button>
-        <button onClick={this.props.onDetailsClick}>Details</button>
+        <button className="btn" onClick={this.props.onNextClick}>Next</button>
+        <button className="btn" onClick={this.props.onDetailsClick}>{this.props.buttonText}</button>
       </div>
     );
   }

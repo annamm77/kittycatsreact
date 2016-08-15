@@ -1,6 +1,12 @@
 .options {
-  background-color: gold;
+  /*background-color: gold;*/
   position: absolute;
   bottom: 0rem;
   width: 100%;
+}
+
+.btn {
+  font-family: 'Quicksand', sans-serif;
+  float: right;
+  margin-left: .5rem;
 }
