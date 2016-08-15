@@ -1,0 +1,12 @@
+.profileimgwrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 25rem;
+}
+
+.profileimgwrapper img {
+  flex-shrink: 0;
+  min-height: 100%
+}

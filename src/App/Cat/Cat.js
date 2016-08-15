@@ -50,10 +50,7 @@ var Cat = React.createClass ({
   render() {
     if (!this.state.showDetails){
       return <div className="cat">
-        <Profile
-          name={this.state.searchResults[this.state.currentCat]["name"]}
-          image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
-        />
+        <Profile currentCat={this.state.searchResults[this.state.currentCat]}/>
         <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} />
       </div>
     }

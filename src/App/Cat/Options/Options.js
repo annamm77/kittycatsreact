@@ -4,7 +4,7 @@ import './Options.css';
 class Options extends Component {
   render() {
     return (
-      <div className="Options">
+      <div className="options">
         <button onClick={this.props.onNextClick}>Next</button>
         <button onClick={this.props.onDetailsClick}>See Details</button>
       </div>

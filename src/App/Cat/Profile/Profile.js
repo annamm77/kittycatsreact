@@ -5,8 +5,10 @@ class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        {this.props.image}
-        <p>{this.props.name}</p>
+        <div className="profileimgwrapper">
+          <img src={this.props.currentCat["image"]} alt="current cat" className="profileimg" />
+        </div>
+        <p>{this.props.currentCat["name"]}</p>
       </div>
     );
   }

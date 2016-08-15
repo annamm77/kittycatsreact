@@ -1,5 +1,6 @@
 .cat {
   background-color:lightblue;
+  text-align: center;
   position: fixed;
   width: 50rem;
   height: 30rem;
