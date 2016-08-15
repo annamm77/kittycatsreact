@@ -9,13 +9,22 @@ var Cat = React.createClass ({
   getInitialState: function() {
     return {
       currentCat: 0,
-      searchResults: "cats go here"
+      searchResults: "cats go here",
+      details: <Details />,
+      profile: "boop",
+      options: <Options onNextClick={this.handleNextCat} />
     };
   },
 
   componentDidMount(){
    this.getCats();
   },
+
+//make this after getCats is done
+  // <Profile
+  //   name={this.state.searchResults[this.state.currentCat]["name"]}
+  //   image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
+  // />,
 
   getCats: function(){
     $.ajax({
@@ -41,12 +50,7 @@ var Cat = React.createClass ({
   render() {
     return (
       <div className="Cat">
-        <Profile
-          name={this.state.searchResults[this.state.currentCat]["name"]}
-          image={<img src={this.state.searchResults[this.state.currentCat]["image"]} alt="current cat" />}
-          />
-        <Options
-          onNextClick={this.handleNextCat} />
+        {this.state.details}
       </div>
     );
   }
