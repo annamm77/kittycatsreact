@@ -35,8 +35,13 @@ var Cat = React.createClass ({
   },
 
   handleNextCat: function() {
-    var nextCat = this.state.currentCat + 1
-    this.setState({currentCat: nextCat});
+    var lastcatindex = this.state.searchResults.length-1
+    console.log(lastcatindex)
+    console.log(this.state.currentCat)
+    if (this.state.currentCat < lastcatindex) {
+      var nextCat = this.state.currentCat + 1
+      this.setState({currentCat: nextCat});
+    }
   },
 
   handleDetails: function () {
