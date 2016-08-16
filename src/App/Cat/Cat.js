@@ -44,6 +44,14 @@ var Cat = React.createClass ({
     }
   },
 
+  handlePreviousCat: function() {
+    var firstcatindex = 0
+    if (this.state.currentCat > firstcatindex) {
+      var previousCat = this.state.currentCat - 1
+      this.setState({currentCat: previousCat});
+    }
+  },
+
   handleDetails: function () {
     if (this.state.showDetails === false) {
       this.setState({showDetails: true})
@@ -56,7 +64,7 @@ var Cat = React.createClass ({
     if (!this.state.showDetails){
       return <div className="cat">
         <Profile currentCat={this.state.searchResults[this.state.currentCat]}/>
-        <Options onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Profile View" />
+        <Options onPreviousClick={this.handlePreviousCat} onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Profile View" />
       </div>
     }
 
