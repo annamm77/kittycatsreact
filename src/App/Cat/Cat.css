@@ -8,4 +8,5 @@
   left: 50%;
   margin-top: -15rem; /* Negative half of height. */
   margin-left: -25rem; /* Negative half of width. */
+  font-family: 'Quicksand', sans-serif;
 }

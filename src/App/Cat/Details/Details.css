@@ -9,16 +9,29 @@
 
 .detailsimg {
   height: 10rem;
+  float: left;
 }
 
 .generalinfo {
   background-color: yellow;
+  height: 10rem;
+  margin-top: 0rem;
+  list-style-type: none;
+  text-align: center;
+}
+
+.generalinfo li {
+  background-color: purple;
+  font-size: 2rem;
 }
 
 .description {
+  text-indent: 3rem;
   background-color: green;
 }
 
 .contactinfo {
   background-color: red;
+  list-style-type: none;
+  text-align: center;
 }

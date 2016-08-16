@@ -7,25 +7,21 @@ class Details extends Component {
     <div className="detailswrapper">
       <img src={this.props.currentCat["image"]} alt="current cat" className="detailsimg" />
 
-      <p className="generalinfo">
-        Name: {this.props.currentCat["name"]}
-        Age: {this.props.currentCat["age"]}
-        Sex: {this.props.currentCat["sex"]}
-        Breed: {this.props.currentCat["breed"]}
-      </p>
+      <ul className="generalinfo">
+        <li className="bigname">Name: {this.props.currentCat["name"]}</li>
+        <li>Age: {this.props.currentCat["age"]}</li>
+        <li>Sex: {this.props.currentCat["sex"]}</li>
+        <li>Breed: {this.props.currentCat["breed"]}</li>
+      </ul>
 
       <p className="description">
         {this.props.currentCat["description"]}
       </p>
 
-      <p className="contactinfo">
-        {this.props.currentCat["address"]}
-        {this.props.currentCat["city"]}
-        {this.props.currentCat["state"]}
-        {this.props.currentCat["zip"]}
-        {this.props.currentCat["phone"]}
-        {this.props.currentCat["email"]}
-      </p>
+      <ul className="contactinfo">
+        <li>{this.props.currentCat["address"]}, {this.props.currentCat["city"]}, {this.props.currentCat["state"]} {this.props.currentCat["zip"]}</li>
+        <li>{this.props.currentCat["phone"]} or {this.props.currentCat["email"]}</li>
+      </ul>
     </div>
     );
   }
