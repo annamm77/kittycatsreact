@@ -1,12 +1,19 @@
+/*affects name*/
+.Profile {
+  text-align: center;
+}
+
 .profilewrapper {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   height: 25rem;
+  background-color: red;
 }
 
-.profilewrapper img {
+.profilewrapper .profileimg {
   flex-shrink: 0;
   min-height: 100%
 }

@@ -1,0 +1,24 @@
+.detailswrapper {
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  overflow: hidden;
+  height: 25rem;
+  background-color: blue;
+}
+
+.detailsimg {
+  height: 10rem;
+}
+
+.generalinfo {
+  background-color: yellow;
+}
+
+.description {
+  background-color: green;
+}
+
+.contactinfo {
+  background-color: red;
+}
