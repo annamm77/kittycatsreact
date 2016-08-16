@@ -10,3 +10,8 @@
   margin-left: -25rem; /* Negative half of width. */
   font-family: 'Quicksand', sans-serif;
 }
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+}

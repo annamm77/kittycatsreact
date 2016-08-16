@@ -9,7 +9,7 @@ var Cat = React.createClass ({
   getInitialState: function() {
     return {
       currentCat: 0,
-      searchResults: "loading",
+      searchResults: "not loaded",
       showDetails: false
     };
   },
@@ -61,7 +61,15 @@ var Cat = React.createClass ({
   },
 
   render() {
+
     var current_display
+
+    if (this.state.searchResults === "not loaded") {
+        return <div className="loading">
+          <p>Finding Cats...</p>
+        </div>
+    }
+
       if (!this.state.showDetails) {
         current_display = <Profile currentCat={this.state.searchResults[this.state.currentCat]}/>
       } else {
@@ -72,6 +80,7 @@ var Cat = React.createClass ({
       {current_display}
       <Options onPreviousClick={this.handlePreviousCat} onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Profile View" />
     </div>
+
   }
 })
 export default Cat;
