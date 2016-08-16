@@ -61,18 +61,17 @@ var Cat = React.createClass ({
   },
 
   render() {
-    if (!this.state.showDetails){
-      return <div className="cat">
-        <Profile currentCat={this.state.searchResults[this.state.currentCat]}/>
-        <Options onPreviousClick={this.handlePreviousCat} onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Profile View" />
-      </div>
-    }
+    var current_display
+      if (!this.state.showDetails) {
+        current_display = <Profile currentCat={this.state.searchResults[this.state.currentCat]}/>
+      } else {
+        current_display = <Details currentCat={this.state.searchResults[this.state.currentCat]} onDetailsClick={this.handleDetails}/>
+      }
 
     return <div className="cat">
-      <Details currentCat={this.state.searchResults[this.state.currentCat]} onDetailsClick={this.handleDetails}/>
-      <Options onPreviousClick={this.handlePreviousCat} onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Picture View" />
+      {current_display}
+      <Options onPreviousClick={this.handlePreviousCat} onNextClick={this.handleNextCat} onDetailsClick={this.handleDetails} buttonText="Profile View" />
     </div>
   }
 })
-
 export default Cat;
